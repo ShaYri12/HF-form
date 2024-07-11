@@ -1,0 +1,107 @@
+.plan-select {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.plan-option {
+  display: flex;
+  gap: 10px;
+  border: 1px solid #a4a4a6;
+  border-radius: 84px;
+  padding: 18px 30px 18px 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #484e5a;
+  cursor: pointer;
+}
+
+.plan-option label,
+.plan-option input {
+  cursor: pointer;
+}
+
+.plan-option input {
+  margin: 0;
+  width: 20px;
+}
+
+.plan-option input[type="radio"] {
+  display: none; /* Hide the default checkbox */
+}
+
+.plan-option input[type="radio"] + label {
+  display: inline-block;
+  position: relative;
+  padding-left: 33px; /* Adjust this value based on your image size */
+  cursor: pointer;
+}
+
+.plan-option input[type="radio"] + label::before {
+  content: "";
+  display: inline-block;
+  width: 20px; /* Adjust this value based on your image size */
+  height: 20px; /* Adjust this value based on your image size */
+  background: url("/assets/unchecked.svg") no-repeat; /* Specify your unchecked image URL */
+  background-size: contain; /* Ensure the image fits within the box */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.plan-option input[type="radio"]:checked + label::before {
+  background: url("/assets/checkmark.svg") no-repeat; /* Specify your checked image URL */
+  background-size: contain; /* Ensure the image fits within the box */
+}
+
+.plan-selection-text {
+  display: flex !important;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  text-transform: capitalize !important;
+}
+
+.plan-selection-text .month {
+  display: flex;
+  padding-right: 10px;
+  font-weight: 600 !important;
+  color: #020202;
+  font-size: 17px;
+}
+
+.plan-selection-text .price {
+  display: flex;
+  gap: 10px;
+  font-size: 16px;
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 400px) {
+  .plan-selection-text .price {
+    flex-direction: column;
+    gap: 0px !important;
+  }
+}
+
+.plan-select .price-total {
+  display: flex;
+  justify-content: start;
+}
+
+.plan-select .price-total span {
+  font-size: 14px !important;
+  text-align: start;
+}
+
+.original-price {
+  text-decoration: line-through;
+}
+
+.plan {
+  padding-top: 20px;
+  display: flex;
+}
